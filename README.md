@@ -1,13 +1,13 @@
 ## Get Started
 * Visit the [Google Script environment](https://script.google.com/u/1/home/)
 * On top right click the *create new project* button
-![image](https://github.com/user-attachments/assets/6a9292c1-1991-46e0-b0fa-7ab589736bd7){ align=right}
+![image](https://github.com/user-attachments/assets/6a9292c1-1991-46e0-b0fa-7ab589736bd7)
 
 * On the left hand side menu you'll see the option libraries. *CLICK ON THE + ICON*
-![image](https://github.com/user-attachments/assets/49e6cc59-1645-42dd-931d-b41ddd16c603){ align=right}
+![image](https://github.com/user-attachments/assets/49e6cc59-1645-42dd-931d-b41ddd16c603)
 
 * The following pop up will prompt:
-![image](https://github.com/user-attachments/assets/273b5294-35ba-4678-802f-36a02a9d99c9){ align=right}
+![image](https://github.com/user-attachments/assets/273b5294-35ba-4678-802f-36a02a9d99c9)
 
 
 ## Add the library to your script project
@@ -15,7 +15,7 @@
 *key*:1VK1pahv2k9SaBAcV0yBM7iyA6fdkkVpZDj_yJtpNHNLxmMD7jyrwY1We
 
 ### Paste it in the ID Field and click on *search*:
-![image](https://github.com/user-attachments/assets/a416cb69-7ae4-4f11-9234-42d933dfd19a){ align=right}
+![image](https://github.com/user-attachments/assets/a416cb69-7ae4-4f11-9234-42d933dfd19a)
 
 Click on the version field and you will see a couple of options:
 * HEAD (development mode): This will give you the version of the library with the latest changes, although it could malfunction as it is a development version.
@@ -29,14 +29,14 @@ The identifier field control how tou want the library to be invoked inside your 
 
 ## Implementation of the library 
 Add the following code to your script.
-![image](https://github.com/user-attachments/assets/04e64716-a9e3-4492-afec-13ce2df26cf6){ align=right}
+![image](https://github.com/user-attachments/assets/04e64716-a9e3-4492-afec-13ce2df26cf6)
 
 ### Test the library
 Temporarly Comment the *hwHelper.run()* function and *CLICK* on the execute button at the top to test the library was loaded properly. 
-![image](https://github.com/user-attachments/assets/ba2d5e9b-5653-4c4a-bf3f-8fec918dc444){ align=right}
+![image](https://github.com/user-attachments/assets/ba2d5e9b-5653-4c4a-bf3f-8fec918dc444)
 
 You should get the following prompt
-![image](https://github.com/user-attachments/assets/268495c0-2e7b-47d4-bd31-394f572ac07d){ align=right}
+![image](https://github.com/user-attachments/assets/268495c0-2e7b-47d4-bd31-394f572ac07d)
 
 Uncomment the *hwHelper.run()* to leave it ready to run.
 
@@ -50,13 +50,13 @@ Set the parameters to suit your needs:
 
 ## Set the triggers
 On the left side menu, *CLICK* on the clock icon:
-![image](https://github.com/user-attachments/assets/a9c326ce-0bd7-45aa-a3fc-31eec693739a){ align=right}
+![image](https://github.com/user-attachments/assets/a9c326ce-0bd7-45aa-a3fc-31eec693739a)
 
 You'll be prompted to the next page:
-![image](https://github.com/user-attachments/assets/53feb314-569f-438b-9878-90cb281a47e6){ align=right}
+![image](https://github.com/user-attachments/assets/53feb314-569f-438b-9878-90cb281a47e6)
 
 *CLICK* on the button *ADD TRIGGER* on the left inferior corner, of the page. The following popup will apear:
-![image](https://github.com/user-attachments/assets/b6b9c93e-5f1c-45ae-a568-895095385d88){ align=right}
+![image](https://github.com/user-attachments/assets/b6b9c93e-5f1c-45ae-a568-895095385d88)
 
 #### Input the following options:
 * Function to execute: main
