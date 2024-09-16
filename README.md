@@ -3,8 +3,9 @@
 * On top right click the *create new project* button
 ![image](https://github.com/user-attachments/assets/6a9292c1-1991-46e0-b0fa-7ab589736bd7)
 
-* Create a new Google Script project 
 * On the left hand side menu you'll see the option libraries. *CLICK ON THE + ICON*
+![image](https://github.com/user-attachments/assets/49e6cc59-1645-42dd-931d-b41ddd16c603)
+
 * The following pop up will prompt:
 ![image](https://github.com/user-attachments/assets/273b5294-35ba-4678-802f-36a02a9d99c9)
 
