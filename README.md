@@ -73,7 +73,117 @@ Set the parameters to suit your needs:
   *Note: This feature is still under development.*
 
 ---
+Here’s the enhanced version of your Markdown file with proper placement and formatting for the images:
 
+---
+
+# Set the API Keys
+
+In this project, we are using two main services that require API keys. Here’s how to set them up.
+
+1. **Click** on the left menu and select the gear icon labeled **Project Configuration**.
+
+   ![image](https://github.com/user-attachments/assets/cccc3a0a-d390-470e-96ef-a37da89bc6a7)
+
+2. Scroll to the bottom of the page and **click** the button labeled **Add Command Sequence Property**.
+
+   ![image](https://github.com/user-attachments/assets/9f9e3f8a-a9a8-4dc8-b538-4a210fd8cb9a)
+
+This will open two fields: **Property** and **Value**. In the **Property** field, enter the alias for your API key as it will appear in your code. Let’s see the two API keys that we will place here:
+
+---
+
+## Gemini API Key
+
+1. In the **Property** field, use the name `GEMINI_API_KEY` (you can use any name, but ensure it matches your code).
+
+   ![image](https://github.com/user-attachments/assets/1c77068f-cb9d-45f3-9492-4d77168c88c0)
+
+2. To get the Gemini API key, visit [Google's AI Studio](https://aistudio.google.com/app/u/1/apikey) and log in with the preferred account.
+
+3. On the left-side menu, **Click** on **Get API Key**.
+
+   ![image](https://github.com/user-attachments/assets/bc7e354b-daf5-47c4-a3a2-5443928cf49e)
+
+4. Then select the **Create API Key** button.
+
+   ![image](https://github.com/user-attachments/assets/922473dc-c2aa-445d-9336-64db9c7df81c)
+
+5. A pop-up will display your new API key. **Copy** the key and paste it into the **Value** field in the Google Script input.
+
+   ![image](https://github.com/user-attachments/assets/6f0b9039-360a-4452-a13d-f044131f75d8)
+
+6. **Click** the **Save Command Sequence Property** button just below the input.
+
+---
+
+## GitHub API Key
+
+Add another **Command Sequence Property** for the GitHub API key.
+
+1. To retrieve or generate your **GitHub API Key** (Personal Access Token), follow these steps:
+
+   - Go to [GitHub.com](https://github.com) or go directly to the [GitHub API Key Settings](https://github.com/settings/tokens) and log in to your account.
+   - Click on your profile picture in the top-right corner and select **Settings**.
+
+2. **Access Developer Settings**:
+
+   - In the left-hand sidebar, scroll down and click **Developer settings**.
+   - Click on **Personal Access Tokens**.
+   - Then click **Tokens (classic)** to view or generate classic tokens.
+   - Alternatively, use **Fine-grained tokens** for more specific permissions (recommended for newer projects).
+
+3. **Generate a New Token**:
+
+   - Click **Generate new token**.
+   - Select the necessary **scopes**. For this project, ensure *repo status* and *public_repo* are selected.
+
+   ![image](https://github.com/user-attachments/assets/54be8443-7a23-4713-9455-bf0975b37ee9)
+
+4. **Save your token** immediately after generation, as it will not be displayed again.
+
+   ![image](https://github.com/user-attachments/assets/7acb13f3-bdd0-4edf-8169-442f4ab7da66)
+
+5. Copy and paste the generated GitHub API key into the **Google Script** Property Value field.
+
+   ![image](https://github.com/user-attachments/assets/4d06f41b-ad9b-47fe-b0d3-96463361feec)
+
+6. Finally, **click** the **Save Properties** button.
+
+---
+
+## Set API Keys in the Library
+
+Now, we need to pass these keys to the library so that it can use them. Back in the script editor, add the following lines of code:
+
+```javascript
+const GITHUB_USERNAME = 'ThaManWithoutFear';
+const GITHUB_REPO_NAME = 'HW_HELPER';
+
+const properties = PropertiesService.getScriptProperties().getProperties();
+const GEMINI_API_KEY = properties['GEMINI_API_KEY'];
+const GITHUB_API_KEY = properties['GITHUB_API_KEY'];
+
+const GH_CREDENTIALS = {
+  githubToken: GITHUB_API_KEY,
+  username: GITHUB_USERNAME,
+  repoName: GITHUB_REPO_NAME
+};
+```
+
+Here, you define your GitHub username and the repo name you want to use. You can leave this option blank, and it will default to the `'HW_HELPER'` repo name.
+
+   ![image](https://github.com/user-attachments/assets/0253825c-2292-437e-ada0-e83afbfc4cd1)
+
+Then, add the parameters to the `run` function:
+
+```javascript
+hwHelper.run(HW_TITLE, NAME, REG, GH_CREDENTIALS, GEMINI_API_KEY, CLASSES, TASK_LIST_NAME);
+```
+   ![image](https://github.com/user-attachments/assets/0cbaaa5b-bbe1-4849-8db9-a821f4843f4a)
+
+
+---
 ## Set the Triggers
 
 On the left-side menu, click on the **Clock Icon**:
