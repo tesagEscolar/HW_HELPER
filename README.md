@@ -1,77 +1,116 @@
-## Get Started
-* Visit the [Google Script environment](https://script.google.com/u/1/home/)
-* On top right click the *create new project* button
-![image](https://github.com/user-attachments/assets/6a9292c1-1991-46e0-b0fa-7ab589736bd7)
+Here’s a prettified version of your Markdown file with proper placement and styles for the images:
 
-* On the left hand side menu you'll see the option libraries. *CLICK ON THE + ICON*
-![image](https://github.com/user-attachments/assets/49e6cc59-1645-42dd-931d-b41ddd16c603)
+---
 
-* The following pop up will prompt:
-![image](https://github.com/user-attachments/assets/273b5294-35ba-4678-802f-36a02a9d99c9)
+# Get Started
 
+1. Visit the [Google Script environment](https://script.google.com/u/1/home/)
+2. On the top right, click the **Create New Project** button.
 
-## Add the library to your script project
-### Use the following key to search for library
-*key*:1VK1pahv2k9SaBAcV0yBM7iyA6fdkkVpZDj_yJtpNHNLxmMD7jyrwY1We
+   ![image](https://github.com/user-attachments/assets/6a9292c1-1991-46e0-b0fa-7ab589736bd7)
 
-### Paste it in the ID Field and click on *search*:
-![image](https://github.com/user-attachments/assets/a416cb69-7ae4-4f11-9234-42d933dfd19a)
+3. On the left-hand side menu, you'll see the **Libraries** option.  
+   **Click on the + icon.**
 
-Click on the version field and you will see a couple of options:
-* HEAD (development mode): This will give you the version of the library with the latest changes, although it could malfunction as it is a development version.
-* 8 (latest number version): Click on the highest number to get the latest functioning version of the library.
+   ![image](https://github.com/user-attachments/assets/49e6cc59-1645-42dd-931d-b41ddd16c603)
 
-The identifier field control how tou want the library to be invoked inside your code. You can leave it as is, to have the same results as in this guide.
+4. The following pop-up will appear:
 
-*CLICK ON ADD TO CONTINUE*
+   ![image](https://github.com/user-attachments/assets/273b5294-35ba-4678-802f-36a02a9d99c9)
 
+---
 
+## Add the Library to Your Script Project
 
-## Implementation of the library 
-Add the following code to your script.
-![image](https://github.com/user-attachments/assets/04e64716-a9e3-4492-afec-13ce2df26cf6)
+### Use the following key to search for the library:
 
-### Test the library
-Temporarly Comment the *hwHelper.run()* function and *CLICK* on the execute button at the top to test the library was loaded properly. 
-![image](https://github.com/user-attachments/assets/ba2d5e9b-5653-4c4a-bf3f-8fec918dc444)
+- **Key**: `1VK1pahv2k9SaBAcV0yBM7iyA6fdkkVpZDj_yJtpNHNLxmMD7jyrwY1We`
 
-You should get the following prompt
-![image](https://github.com/user-attachments/assets/268495c0-2e7b-47d4-bd31-394f572ac07d)
+### Paste it in the **ID Field** and click **Search**:
 
-Uncomment the *hwHelper.run()* to leave it ready to run.
+   ![image](https://github.com/user-attachments/assets/a416cb69-7ae4-4f11-9234-42d933dfd19a)
 
-### Field explanations:
+5. In the **Version** field, you will see a couple of options:
+   - **HEAD (development mode)**: This provides the latest version but could be unstable as it's a development version.
+   - **8 (latest number version)**: Select the highest number for the latest stable version.
+
+6. The **Identifier Field** controls how you want the library to be invoked in your code. You can leave it as is for the same results as in this guide.
+
+7. **Click on Add** to continue.
+
+---
+
+## Implementation of the Library
+
+Add the following code to your script:
+
+   ![image](https://github.com/user-attachments/assets/04e64716-a9e3-4492-afec-13ce2df26cf6)
+
+---
+
+### Test the Library
+
+Temporarily comment out the `hwHelper.run()` function and click the **Execute** button at the top to test whether the library was loaded properly.
+
+   ![image](https://github.com/user-attachments/assets/ba2d5e9b-5653-4c4a-bf3f-8fec918dc444)
+
+You should see the following prompt:
+
+   ![image](https://github.com/user-attachments/assets/268495c0-2e7b-47d4-bd31-394f572ac07d)
+
+Uncomment `hwHelper.run()` to prepare it for execution.
+
+---
+
+### Field Explanations:
+
 Set the parameters to suit your needs:
-* HW_TITLE: The title (copyed) of a specific homework you want the assistant to solve. Use 'ALL' to check all pending asigments.
-* NAME: Your student name, this is the name that will be used to fill your essays, works, slides etc..
-* REG: Your student register, this will be used to fill your essays, works, slides etc...
-* CLASSES: An array containing the exact names of the classes from where the bot will look for asigments.
-* TASK_LIST_NAME: The name of the task list where notifications of the done asigments will be posted. *NOTE: this feature is still under development*
+- **HW_TITLE**: The title (copied) of a specific homework assignment you want the assistant to solve. Use `'ALL'` to check all pending assignments.
+- **NAME**: Your student name. This will be used to fill your essays, works, slides, etc.
+- **REG**: Your student registration. This will also be used to fill your works.
+- **CLASSES**: An array of exact class names where the bot will search for assignments.
+- **TASK_LIST_NAME**: The name of the task list where notifications about completed assignments will be posted.  
+  *Note: This feature is still under development.*
 
-## Set the triggers
-On the left side menu, *CLICK* on the clock icon:
-![image](https://github.com/user-attachments/assets/a9c326ce-0bd7-45aa-a3fc-31eec693739a)
+---
 
-You'll be prompted to the next page:
-![image](https://github.com/user-attachments/assets/53feb314-569f-438b-9878-90cb281a47e6)
+## Set the Triggers
 
-*CLICK* on the button *ADD TRIGGER* on the left inferior corner, of the page. The following popup will apear:
-![image](https://github.com/user-attachments/assets/b6b9c93e-5f1c-45ae-a568-895095385d88)
+On the left-side menu, click on the **Clock Icon**:
+
+   ![image](https://github.com/user-attachments/assets/a9c326ce-0bd7-45aa-a3fc-31eec693739a)
+
+You'll be taken to the following page:
+
+   ![image](https://github.com/user-attachments/assets/53feb314-569f-438b-9878-90cb281a47e6)
+
+1. Click on the **Add Trigger** button in the bottom-left corner of the page. The following pop-up will appear:
+
+   ![image](https://github.com/user-attachments/assets/b6b9c93e-5f1c-45ae-a568-895095385d88)
 
 #### Input the following options:
-* Function to execute: main
-* Deploy to execute: Main (Principal)
-* Source of the event: Time based (Según tiempo)
-* Time based Trigger: Timer by days (Temporizador por dias)
-* Hour: 22:00 to 23:00
 
-![image](https://github.com/user-attachments/assets/8e97f216-071c-41ec-80fb-a1037ade50f4)
-![image](https://github.com/user-attachments/assets/715cb55a-9089-49b7-92b2-3140f1d2d3be)
+- **Function to execute**: `main`
+- **Deploy to execute**: `Main (Principal)`
+- **Source of the event**: `Time-based (Según tiempo)`
+- **Time-based Trigger**: `Timer by days (Temporizador por días)`
+- **Hour**: 22:00 to 23:00
 
-*CLICK on the Save button to continue*
+   ![image](https://github.com/user-attachments/assets/8e97f216-071c-41ec-80fb-a1037ade50f4)
+   ![image](https://github.com/user-attachments/assets/715cb55a-9089-49b7-92b2-3140f1d2d3be)
 
-### You are all set your new trigger should appear:
-![image](https://github.com/user-attachments/assets/edf2118d-38fd-42a5-b13f-cac5b2485def)
+2. **Click on the Save button to continue.**
 
-## Thats it!! 🎉🎉🎉 the assistant will run some time between 10pm - 11pm and do your homework.  
+---
 
+### Your new trigger should appear as follows:
+
+   ![image](https://github.com/user-attachments/assets/edf2118d-38fd-42a5-b13f-cac5b2485def)
+
+---
+
+## That's it! 🎉🎉🎉 The assistant will run between 10 PM and 11 PM and do your homework.
+
+--- 
+
+This version structures your instructions cleanly and ensures that the images are placed correctly while maintaining readability.
