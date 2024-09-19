@@ -222,5 +222,3 @@ You'll be taken to the following page:
 ## That's it! 🎉🎉🎉 The assistant will run between 10 PM and 11 PM and do your homework.
 
 --- 
-
-This version structures your instructions cleanly and ensures that the images are placed correctly while maintaining readability.
