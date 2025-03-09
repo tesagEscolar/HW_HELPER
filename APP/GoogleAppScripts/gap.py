@@ -22,7 +22,6 @@ def sendAppScriptsRequest(path, task):
     task['files'] = files_data
 
     res = requests.post(url, json=task)
-    print(res)
 
     if res.status_code == 200:
         pass
