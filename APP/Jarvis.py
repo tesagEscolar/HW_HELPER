@@ -42,6 +42,7 @@ class Jarvis():
 
                 for task in tasks:
                     task = self.gemini.executeTasks(task)
+                    print(task)
                     generate_task(task)
                 resp = 'Tasks finished succesfully'
             
