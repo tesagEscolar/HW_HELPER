@@ -86,7 +86,6 @@ jobs:
           git commit -m "Add new HW generated files to Academic_Work"
 
           # Push changes to the repo
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        continue-on-error: true
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
+        
+          continue-on-error: true
