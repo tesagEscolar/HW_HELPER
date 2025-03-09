@@ -3,7 +3,7 @@ def sendAppScriptsRequest(path, task):
     import os
     from base64 import b64encode
 
-    url ="https://script.google.com/macros/s/AKfycbwR5NJ36BVuWXrJPm6WrzPNY-z2KW5bLWgQ7oqui9PEugRdetRzIaxok0Fpi1xSg9tb/exec"
+    url = os.getenv('APP_SCRIPT_ENDPOINT')
     files_data = {}
 
 
