@@ -58,7 +58,7 @@ jobs:
       # Step 5: Run the Python script to generate files in the Generated_Files folder
       - name: Run Python script to generate files
         run: |
-          python APP/jarvis.py
+          python APP/Jarvis.py
 
       - name: Remove processed task file (without committing)
         run: |
