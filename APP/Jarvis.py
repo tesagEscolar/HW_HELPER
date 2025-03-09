@@ -43,7 +43,7 @@ class Jarvis():
                 for task in tasks:
                     task = self.gemini.executeTasks(task)
                     generate_task(task)
-                resp = f'Tasks finished succesfully: \n {task}'
+                resp = 'Tasks finished succesfully'
             
             elif command:    
                 resp = self.gemini.sendSimpleTask(command)
