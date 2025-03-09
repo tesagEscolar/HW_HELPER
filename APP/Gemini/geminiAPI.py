@@ -1,17 +1,13 @@
 import json
-import PIL
-import PIL.Image
 import google.generativeai as ai_client
-import os
 from google import genai as ai_client_new
 from google.genai.types import HttpOptions, GenerateContentConfig
 from Gemini.Instructions import ModelInstructions
 from Gemini.Schemas import JSON_SCHEMAS, MimeTypes, Task, schema_types, schema_mapping
-from SDXL import ArtStyles
 
 
 class geminiAssistant():
-    def __init__(self, apiKey= os.getenv('GEMINI_API_KEY'), version = '1.5'):
+    def __init__(self, apiKey= "AIzaSyDIGT36TVzhqaBp_FBtq4SHkULRqJ1xmgQ", version = '1.5'):
         self.version = version 
         self.request = []
         self.schema  = None
@@ -34,19 +30,6 @@ class geminiAssistant():
         if mimeType:
             self.mime_type = mimeType.value
 
-
-    def getImage(self, prompt):
-        self.addPromptData(f"Describe a painting of: {prompt}", JSON_SCHEMAS.ART, MimeTypes.JSON)
-        answer = self.sendRequest(ModelInstructions.ART)
-        answer = json.loads(answer)
-        try:
-            style = answer['style']
-            props = list(answer.values())[:-1]
-        except:
-            style = ArtStyles.DIGITAL_ART.value
-            props = list(answer.values())
-        return f"{prompt}, {' '.join(', '.join(value) for value in props)} {ModelInstructions.ART_END}", style
-        
 
     def getTasks(self, task):
         self.addPromptData(task, JSON_SCHEMAS.TASK, MimeTypes.JSON)
@@ -162,12 +145,6 @@ class geminiAssistant():
 
         return ai_client_new.Client(api_key=api_key, http_options=HttpOptions(api_version="v1")) 
 
-
-
-
-
-    def addImage2Prompt(self, path):
-        self.request.append(PIL.Image.open(path)) 
 
     def clearRequest(self):
         self.request.clear()
