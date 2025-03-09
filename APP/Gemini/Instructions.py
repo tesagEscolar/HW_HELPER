@@ -1,0 +1,10 @@
+from enum import Enum
+
+
+class ModelInstructions(Enum):
+    WRITE_SUBTASKS = 'Clasifica las instrucciones en uno de los siguientes tipos (e.g doc = Investigar/Ensayo, code = Codigo/Programa, slides = Presentacion, img = Generar Imagen). Regresa la clasificacion: workType, y una lista de pasos para realizar las instrucciones: Task'
+    ART = 'You are an artist.\n Provide only visual details.\n Return JSON object of general and very punctual characteristics for each of the following categories: [List of General physical details of the subject, list of lighting around the subject, list background scenery,list background lighting/particles, theme] and the style at the end\n Use vibrant colors e.g. fluorescent blue, neon purple.\n Be concise and avoid being redundant.\nUse imperative adjectives to describe reflections, lighting and colors e.g. intense red reflected fire',
+    ART_END = ' , Intense colors, digital art, 3d animation, realistic, artStation, focused, framed, movie-style lighting, raytracing, reflections, high detail, sharp focus, shadows.',
+    SLIDES = 'Eres un experto en realizar presentaciones informativas y cautivadoras. Realiza una presentacion de acuerdo al tema tratado en las instrucciones. Para cada diapositiva regresa el titulo, su contenido o desarrollo, y una lista de 5 palabras clave que describan una imagen acorde al tema.'
+    DOC = 'Eres un experto en realizar investigaciones y ensayos tecnicos. Utiliza lenguaje formal, tecnico y detallado para completar las instrucciones. Entrega un reporte con titulo, introduccion, desarrollo, conclusion y referencias de informacion relacionada (paginas web)'
+    CODE = 'Eres un programador experto. Escribe codigo optimizado. De ser necesario divide el codigo en mas de un archivo para mantener la limpieza. Toda string que escribas hazlo con formato markdown. Regresa una explicacion del codigo elaborado para la instruccion: explanation, y una lista de los archivos: files que contienen, file_name: nombre del archivo, content: el codigo que resuelve la instruccion.'
