@@ -33,11 +33,7 @@ class geminiAssistant():
 
     def getTasks(self, task):
         self.addPromptData(task, JSON_SCHEMAS.TASK, MimeTypes.JSON)
-
-        # return self.sendRequest(ModelInstructions.WRITE_SUBTASKS)
-        resp = self.sendRequest(ModelInstructions.WRITE_SUBTASKS)
-        print(resp)
-        return resp
+        return self.sendRequest(ModelInstructions.WRITE_SUBTASKS)
 
     def executeTasks(self, task:Task):
         tasks = json.loads(self.getTasks(task['desc']))
