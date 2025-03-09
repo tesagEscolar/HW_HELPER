@@ -1,49 +1,15 @@
-import speech_recognition as sr
-import pyttsx3
-# from gtts import gTTS
-import os
 from Ellie.ellie import Ellie
 from Gemini.geminiAPI import geminiAssistant
-from SDXL import ImageScraper
 from Utils.files import generate_task, load_tasks
-from image_widget import ImageGridWidget
 
 
 class Jarvis():
     def __init__(self, voice=None, version = '1.5') -> None:
         self.voice = Ellie(voice) if voice else None 
-        self.engine = self.initEngine()
         self.gemini = geminiAssistant(version=version)
         self.imageGen = None
 
-    # Initialize the recognizer and text-to-speech engine
-    recognizer = sr.Recognizer()
-    recognizer.energy_threshold = 600
-    recognizer.pause_threshold = 1
  
-
-    def initEngine(self):
-        if self.voice: return None
-        engine = pyttsx3.init()
-        engine.setProperty('voice', engine.getProperty('voices')[1].id)
-        engine.setProperty('voice', engine.getProperty('rate') - 300)
-        return engine
-
-
-    # def listen(self):
-    #     with sr.Microphone(device_index=1) as source:
-    #         print("Listening...")
-    #         recognizer.adjust_for_ambient_noise(source, 2)
-    #         audio = recognizer.listen(source)
-    #         try:
-    #             text = recognizer.recognize_google(audio, language="en-US")
-    #             print(f"You said: {text}")
-    #             return text.lower()
-    #         except sr.UnknownValueError:
-    #             return "Sorry, I did not understand that."
-    #         except sr.RequestError:
-    #             return "Sorry, I'm having trouble connecting to the service."
-
 
     def speak(self, text):
         
@@ -51,9 +17,6 @@ class Jarvis():
             print(f'{self.voice.voice.name}: {text}\n')
             status = self.voice.speak(text)
             if status: return
-    
-            self.engine.say(text)
-            self.engine.runAndWait()
             return
         
         print(f'Assistant: {text}\n')
@@ -72,21 +35,7 @@ class Jarvis():
         else:
             return self.gemini.sendSimpleTask(command)
 
-    def genImages(self, command):
-        prompt, style = self.gemini.getImage(command)
-        imageGen = ImageScraper()
-        images = imageGen.get_images(prompt=prompt, artStyle=style)
-        if images:
-            imageGen.close()
-            image_widget = ImageGridWidget(images)
-            image_widget.display_images()  # Show the widget
-        else:
-            # Close the scraper
-            imageGen.close()
-
-    def test():
-        return sr.Microphone.list_microphone_names()
-
+ 
     def run(self, command=None, complex = False, mode='chat'):
         
         if mode != 'chat':
@@ -109,7 +58,6 @@ class Jarvis():
             return resp
         
         while True:
-            # self.speak('How can I help you?')
             command = input('Me: ').lower()
             if command == 'bye':
                 exit()
