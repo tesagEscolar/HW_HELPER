@@ -10,6 +10,9 @@ on:
 jobs:
   generate-and-commit:
     runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
 
     steps:
       # Step 1: Checkout the repository (app folder + Tasks folder)
