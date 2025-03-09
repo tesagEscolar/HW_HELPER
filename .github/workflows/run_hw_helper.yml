@@ -56,7 +56,7 @@ jobs:
       # Step 5: Run the Python script to generate files in the Generated_Files folder
       - name: Run Python script to generate files
         run: |
-          python APP/Jarvis.py
+          python APP/main.py
         env:
           APP_SCRIPT_ENDPOINT: ${{ secrets.APP_SCRIPT_ENDPOINT }}  # Inject secret into environment variable
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}  
