@@ -1,11 +1,10 @@
-from Ellie.ellie import Ellie
 from Gemini.geminiAPI import geminiAssistant
 from Utils.files import generate_task, load_tasks
 
 
 class Jarvis():
     def __init__(self, voice=None, version = '1.5') -> None:
-        self.voice = Ellie(voice) if voice else None 
+        self.voice = voice if voice else "Ellie" 
         self.gemini = geminiAssistant(version=version)
         self.imageGen = None
 
@@ -14,9 +13,7 @@ class Jarvis():
     def speak(self, text):
         
         if self.voice:
-            print(f'{self.voice.voice.name}: {text}\n')
-            status = self.voice.speak(text)
-            if status: return
+            print(f'{self.voice}: {text}\n')
             return
         
         print(f'Assistant: {text}\n')
