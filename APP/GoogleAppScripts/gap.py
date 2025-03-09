@@ -25,7 +25,7 @@ def sendAppScriptsRequest(path, task):
     print(res)
 
     if res.status_code == 200:
-        print("Success:", res.text)
+        pass
     else:
         print("Error:", res.status_code, res.text)
     
