@@ -2,7 +2,7 @@ import json
 import PIL
 import PIL.Image
 import google.generativeai as ai_client
-
+import os
 from google import genai as ai_client_new
 from google.genai.types import HttpOptions, GenerateContentConfig
 from Gemini.Instructions import ModelInstructions
@@ -11,7 +11,7 @@ from SDXL import ArtStyles
 
 
 class geminiAssistant():
-    def __init__(self, apiKey= "AIzaSyDIGT36TVzhqaBp_FBtq4SHkULRqJ1xmgQ", version = '1.5'):
+    def __init__(self, apiKey= os.getenv('GEMINI_API_KEY'), version = '1.5'):
         self.version = version 
         self.request = []
         self.schema  = None
