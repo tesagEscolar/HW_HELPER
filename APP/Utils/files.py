@@ -9,7 +9,7 @@ from Gemini.Schemas import Task
 from GoogleAppScripts.gap import sendAppScriptsRequest
 
 
-def generate_code(task:Task):
+def generate_code(task:Task, id):
     readme = generate_cover_page(**task)
     
     code = cast(CodeProj, task["work"])
@@ -19,7 +19,7 @@ def generate_code(task:Task):
         create_file(**file, **task)
         
     path = create_file(file_name="README.md", content=readme, **task)           
-    sendAppScriptsRequest(path, task)
+    sendAppScriptsRequest(path, task, id)
 
 def generate_cover_page(title: str, author: str, register: str, date: str, subject: str, desc: str, professor: str, **kwargs) -> str:
     """
@@ -104,10 +104,10 @@ def load_tasks(path = 'Tasks/*.json'):
     return read_task(data["tasks"]), data["id"]
 
 
-def generate_task(task: Task):
+def generate_task(task: Task, id):
 
     if task["cat"] == JSON_SCHEMAS.CODE_PROJ.value:
-        generate_code(task)
+        generate_code(task, id)
     elif task["cat"] == JSON_SCHEMAS.DOC.value:
         generate_essay()
     elif task["cat"] == JSON_SCHEMAS.SLIDES.value:
