@@ -101,7 +101,7 @@ def load_tasks(path = 'Tasks/*.json'):
     latest_file = task_files[0]
 
     data = parse_json(latest_file)
-    return read_task(data)
+    return read_task(data["tasks"]), data["id"]
 
 
 def generate_task(task: Task):
