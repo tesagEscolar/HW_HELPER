@@ -20,6 +20,15 @@ jobs:
         with:
           submodules: 'false'
           fetch-depth: 1  # Shallow clone to save time
+            # Check if the task.json file was deleted
+      
+      - name: Check if task.json is deleted
+        id: check_deletion
+        run: |
+          if git diff --name-status HEAD^..HEAD | grep -q 'D.*Tasks/'; then
+            echo "task.json file was deleted, skipping processing."
+            exit 0  # Skip if task.json was deleted
+          fi
 
       # Step 2: Cache Python dependencies
       - name: Cache Python dependencies
@@ -64,33 +73,33 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}  
         
 
-      - name: Remove processed task file (without committing)
-        run: |
-          # Assuming task file is located in 'Tasks/'
-          rm -f Tasks/*.json
-          echo "File deleted successfully"
+      # - name: Remove processed task file (without committing)
+      #   run: |
+      #     # Assuming task file is located in 'Tasks/'
+      #     rm -f Tasks/*.json
+      #     echo "File deleted successfully"
 
      # Step 6: Add and stage all files in the Generated_Files directory
-      - name: Stage all generated files in Academic_Work folder
-        run: |
-          git add Academic_Work/*
+      # - name: Stage all generated files in Academic_Work folder
+      #   run: |
+      #     git add Academic_Work/*
 
-      - name: Print environment variables
-        run: |
-          echo "GitHub actor: ${{ github.actor }}"
-          echo "Repository: ${{ github.repository }}"
-          echo "Token: ${{ secrets.GITHUB_TOKEN }}"
+      # - name: Print environment variables
+      #   run: |
+      #     echo "GitHub actor: ${{ github.actor }}"
+      #     echo "Repository: ${{ github.repository }}"
+      #     echo "Token: ${{ secrets.GITHUB_TOKEN }}"
 
-      # Step 7: Commit and push the generated files to the same repo
-      - name: Commit and push generated files
-        run: |
-          git config --global user.name "${{ github.actor }}"
-          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+      # # Step 7: Commit and push the generated files to the same repo
+      # - name: Commit and push generated files
+      #   run: |
+      #     git config --global user.name "${{ github.actor }}"
+      #     git config --global user.email "${{ github.actor }}@users.noreply.github.com"
           
-          # Commit the new files
-          git commit -m "Add new HW generated files to Academic_Work"
+      #     # Commit the new files
+      #     git commit -m "Add new HW generated files to Academic_Work"
 
-          # Push changes to the repo
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
+      #     # Push changes to the repo
+      #     git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
         
-          continue-on-error: true
+      #     continue-on-error: true
