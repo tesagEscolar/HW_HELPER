@@ -21,6 +21,39 @@ def generate_code(task:Task, id):
     path = create_file(file_name="README.md", content=readme, **task)           
     sendAppScriptsRequest(path, task, id)
 
+def generate_essay(task:Task):
+    doc = generate_cover_page(**task)
+
+
+    markdown = textwrap.dedent(f"""
+        ---
+        # {task['work']['title']}
+
+        ## Introduction:
+        {task['work']['introduction']}
+
+        ---
+
+        ## Development:
+        {task['work']['development']}
+
+        ---
+
+        ## Conclusion:
+        {task['work']['conclusion']}
+        
+        ---
+        
+        ## References:
+        {task['work']['references']}
+    """)
+
+    doc += f'\n {markdown}'
+        
+    path = create_file(file_name=f"{task['title']}.md", content=doc, **task)           
+    sendAppScriptsRequest(path, task)
+
+
 def generate_cover_page(title: str, author: str, register: str, date: str, subject: str, desc: str, professor: str, **kwargs) -> str:
     """
     Generates a cover page in Markdown format with the provided information.
@@ -114,13 +147,6 @@ def generate_task(task: Task, id):
         pass
     else:
         generate_essay()
-    
-
-
-
-def generate_essay():
-    pass
-
 
 
 def gen_code_md_image(file_name, content):
