@@ -38,11 +38,11 @@ class Jarvis():
         if mode != 'chat':
             
             if complex:
-                tasks = load_tasks()
+                tasks, id = load_tasks()
 
                 for task in tasks:
                     task = self.gemini.executeTasks(task)
-                    generate_task(task)
+                    generate_task(task, id)
                 resp = 'Tasks finished succesfully'
             
             elif command:    
