@@ -22,13 +22,15 @@ jobs:
           fetch-depth: 1  # Shallow clone to save time
             # Check if the task.json file was deleted
       
-      - name: Check if task.json is deleted
-        id: check_deletion
+      # Check if the 'Tasks' folder exists
+      - name: Check if Tasks folder exists
+        id: check_folder
         run: |
-          if git diff --name-status HEAD^..HEAD | grep -q 'D.*Tasks/'; then
-            echo "task.json file was deleted, skipping processing."
-            exit 0  # Skip if task.json was deleted
+          if [ ! -d "Tasks" ]; then
+            echo "Tasks folder does not exist. Cancelling execution."
+            exit 0  # Exit early to prevent further execution
           fi
+          echo "Tasks folder exists. Proceeding with task processing."
 
       # Step 2: Cache Python dependencies
       - name: Cache Python dependencies
