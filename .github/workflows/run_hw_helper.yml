@@ -75,6 +75,12 @@ jobs:
         run: |
           git add Academic_Work/*
 
+      - name: Print environment variables
+        run: |
+          echo "GitHub actor: ${{ github.actor }}"
+          echo "Repository: ${{ github.repository }}"
+          echo "Token: ${{ secrets.GITHUB_TOKEN }}"
+
       # Step 7: Commit and push the generated files to the same repo
       - name: Commit and push generated files
         run: |
