@@ -6,13 +6,12 @@ on:
       - main
     paths:
       - 'Tasks/**'  # Trigger on changes to files inside the Tasks folder
+permissions:
+  contents: write
 
 jobs:
   generate-and-commit:
     runs-on: ubuntu-latest
-    
-    permissions:
-      contents: write
 
     steps:
       # Step 1: Checkout the repository (app folder + Tasks folder)
