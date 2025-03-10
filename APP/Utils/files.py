@@ -21,7 +21,7 @@ def generate_code(task:Task, id):
     path = create_file(file_name="README.md", content=readme, **task)           
     sendAppScriptsRequest(path, task, id)
 
-def generate_essay(task:Task):
+def generate_essay(task:Task, id):
     doc = generate_cover_page(**task)
 
 
@@ -51,7 +51,7 @@ def generate_essay(task:Task):
     doc += f'\n {markdown}'
         
     path = create_file(file_name=f"{task['title']}.md", content=doc, **task)           
-    sendAppScriptsRequest(path, task)
+    sendAppScriptsRequest(path, task, id)
 
 
 def generate_cover_page(title: str, author: str, register: str, date: str, subject: str, desc: str, professor: str, **kwargs) -> str:
