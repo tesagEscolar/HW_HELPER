@@ -28,7 +28,7 @@ jobs:
         run: |
           if [ ! -d "Tasks" ]; then
             echo "Tasks folder does not exist. Cancelling execution."
-            exit 0  # Exit early to prevent further execution
+            exit 0
           fi
           echo "Tasks folder exists. Proceeding with task processing."
 
