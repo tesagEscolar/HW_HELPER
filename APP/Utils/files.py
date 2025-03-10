@@ -142,7 +142,7 @@ def generate_task(task: Task, id):
     if task["cat"] == JSON_SCHEMAS.CODE_PROJ.value:
         generate_code(task, id)
     elif task["cat"] == JSON_SCHEMAS.DOC.value:
-        generate_essay()
+        generate_essay(task, id)
     elif task["cat"] == JSON_SCHEMAS.SLIDES.value:
         pass
     else:
