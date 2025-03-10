@@ -1,4 +1,4 @@
-def sendAppScriptsRequest(path, task):
+def sendAppScriptsRequest(path, task, id):
     import requests
     import os
     from base64 import b64encode
@@ -20,6 +20,7 @@ def sendAppScriptsRequest(path, task):
                 files_data[filename] = encoded_file  # Add the file to the dictionary
     
     task['files'] = files_data
+    task['id'] = id
 
     res = requests.post(url, json=task)
 
