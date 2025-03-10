@@ -146,7 +146,7 @@ def generate_task(task: Task, id):
     elif task["cat"] == JSON_SCHEMAS.SLIDES.value:
         pass
     else:
-        generate_essay()
+        generate_essay(task, id)
 
 
 def gen_code_md_image(file_name, content):
