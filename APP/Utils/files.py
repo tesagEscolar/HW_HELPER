@@ -48,9 +48,9 @@ def generate_essay(task:Task, id):
         {task['work']['references']}
     """)
 
-    doc += f'\n {markdown}'
+    doc += f'\n{markdown}'
     print(f'Ellie: \n {doc}')    
-    path = create_file(file_name=f"{task['title']}.md", content=doc, **task)           
+    path = create_file(file_name=f"{task['title']}.md", content=textwrap.dedent(doc), **task)           
     sendAppScriptsRequest(path, task, id)
 
 
