@@ -1,0 +1,29 @@
+{
+  "tasks": [
+    {
+      "title": "Buenas Prácticas en la Administración de Proyectos de TI.",
+      "author": "Daniel Tejeda Saavedra",
+      "register": "22310431",
+      "date": "No due date",
+      "subject": "Administración de TI",
+      "desc": "Desarrolle una síntesis de los siguientes tópicos de la administración de Proyectos de TI.\n\nComparativa entre modelos de mejores prácticas. (Utilice cuadros o informes y al final una comparativa).\n\nITIL (Information Technology Infrastructure Library)\n\nCOBIT (Control Objetives for Information and Related Technology)\n\nMAAGTICSI (Manual Administrativo de Aplicación General en Materia de Tecnologías de la  Información y Comunicaciones y de Seguridad de la Información)\n\nPMBOOK (Project Management Body of Knowledge)\n\nPMI.Project Management Institute \n\nA responder\n¿Quiénes son estos organismos?\n¿Cuál es su objetivo o propósito?\n¿Cuál es su metodología?\n¿Cuál es su misión?\n¿Qué es la gobernanza?\n¿Qué es la cadena de valor?\n¿Qué son las mejores prácticas?\n¿Qué proponen para la administración de la información?\n¿Para que sectores están enfocados?",
+      "professor": "Ricardo Montiel Mena",
+      "cat": "",
+      "resources": "",
+      "work": ""
+    },
+    {
+      "title": "Contexto teórico de la administración de proyectos",
+      "author": "Daniel Tejeda Saavedra",
+      "register": "22310431",
+      "date": "No due date",
+      "subject": "Administración de TI",
+      "desc": "Realice una investigación de los siguientes puntos sobre la teoría de la administración de proyectos. \n\nRefleje con un cuadro sinóptico, diagrama, mapa conceptual,  cuadro de doble entrada o cualquier organizador visual de información.\n-  Ciclo de vida de un Proyecto.\n-  Importancia de la Dirección de Proyectos de TI.\n-  Relación Dirección de Proyectos-Programas-Portafolios y\n-  Conocimiento del Negocio.",
+      "professor": "Ricardo Montiel Mena",
+      "cat": "",
+      "resources": "",
+      "work": ""
+    }
+  ],
+  "id": "task_155bfc0a-e409-4ec6-b6ac-ccbc6f97d52e.json"
+}
